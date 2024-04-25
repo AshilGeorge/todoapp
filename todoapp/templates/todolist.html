@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+    />
+
+    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
+    <!-- https://cdnjs.com/libraries/font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+
+    <title>todolist</title>
+  </head>
+  <body>
+
+<table class="table table-bordered table-striped ">
+    <tr>
+        <th>Id</th>
+        <th>task</th>
+        <th>description</th>
+        <th>date</th>
+        <th>status</th>
+        <th>action</th>
+    </tr>
+    {% for i in list %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.task}}</td>
+        <td>{{i.description}}</td>
+        <td>{{i.date}}</td>
+        <td>{{i.status}}</td>
+        <td>
+            <a href="{% url 'edit_view' i.id %}" class="btn btn-info">Edit</a>
+            <a href="{% url 'delete_view' i.id %}" class="btn btn-danger">Delete</a>
+
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <!-- https://cdnjs.com/libraries/popper.js/2.5.4 -->
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.min.js"
+    ></script> -->
+
+    <!-- More: https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
+  </body>
+</html>
