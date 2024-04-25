@@ -9,7 +9,7 @@ from django.urls import reverse_lazy
 # Create your views here.
 class todoView(View):
     def get(self,request,*args,**kwargs):
-        return render(request,"home.html")
+        return render(request,"index.html")
 
 class LoginView(View):
     def get(self,request,*args,**kwargs):
